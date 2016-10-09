@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 
 var path = process.env.SILVER_DRIP_FILE_PATH;
 
@@ -20,8 +21,8 @@ feed.item({
 	date: new Date().toISOString()
 });
 
-express.all('*', function handler(req, res) {
+app.all('*', function handler(req, res) {
 	res.send(feed.xml());
 })
 
-console.log(feed.xml())
+app.listen(8000)
