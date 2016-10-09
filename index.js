@@ -19,8 +19,8 @@ var RSS = require('rss');
 
 var feed = new RSS({
 	title:'Silver Drip',
-	feed_url: 'ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000',
-	site_url: 'ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000'
+	feed_url: 'http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000',
+	site_url: 'http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000'
 });
 
 new cron.CronJob('* * * * * *', function() {
