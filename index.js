@@ -23,17 +23,35 @@ var feed = new RSS({
 	site_url: 'http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000'
 });
 
-new cron.CronJob('* * * * * *', function() {
-	var index = _.random(0, items.length);
+// new cron.CronJob('* * * * * *', function() {
+// 	var index = _.random(0, items.length);
 
-	feed.item({
-		title: 'Silver Drip Item',
-		description: 'test',
-		url: `http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000/${index}`,
-		guid: Date.now(),
-		date: new Date().toISOString()
-	});
-}, null, true, 'Australia/Brisbane');
+feed.item({
+	title: 'Silver Drip Item',
+	description: 'test',
+	url: `http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000/0`,
+	// url: `http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000/${index}`,
+	guid:2,
+	date: new Date().toISOString()
+});
+
+feed.item({
+	title: 'Silver Drip Item2',
+	description: 'test',
+	url: `http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000/1`,
+	guid: 3,
+	date: new Date().toISOString()
+});
+
+feed.item({
+	title: 'Silver Drip Item3',
+	description: 'test',
+	url: `http://ec2-52-62-223-45.ap-southeast-2.compute.amazonaws.com:8000/2`,
+	guid: 4,
+	date: new Date().toISOString()
+});
+
+// }, null, true, 'Australia/Brisbane');
 
 
 app.all('/', function handler(req, res) {
