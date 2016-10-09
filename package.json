@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cron": "^1.1.1",
     "express": "^4.14.0",
+    "lodash": "^4.16.4",
     "rss": "^1.2.1"
   }
 }
